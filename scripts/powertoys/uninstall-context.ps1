@@ -44,5 +44,5 @@ if ($PSVersionTable.PSVersion.Major -ge 6) { Import-Module Appx -UseWindowsPower
     $likeName = $_
     Get-AppxPackage |
     Where-Object { $_.PackageFullName -like "*$likeName*" } |
-    Remove-AppxPackage | Out-Null
+    Remove-AppxPackage -PreserveApplicationData | Out-Null
 }
